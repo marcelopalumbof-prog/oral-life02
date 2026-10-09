@@ -1044,8 +1044,9 @@ a:hover { color: var(--coral-escura); }
 /* Enquanto o aviso de cookies estiver visivel, o botao sobe para nao ficar por baixo */
 body:has(.banner-cookies.visivel) .whatsapp-flutuante { bottom: 108px; }
 .whatsapp-flutuante svg {
-  height: 34px;
-  width: auto;
+  height: 48px;
+  width: 48px;
+  color: var(--whatsapp);
 }
 
 /* Anel pulsante — o efeito clássico do widget do WhatsApp */
