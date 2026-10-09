@@ -1020,7 +1020,7 @@ a:hover { color: var(--coral-escura); }
 .redes svg { height: 20px; width: auto; }
 
 /* ---------- Botão flutuante WhatsApp ---------- */
-/* ---------- Botão flutuante WhatsApp (círculo, só a logo) ---------- */
+/* ---------- Botão flutuante WhatsApp (círculo com logo + anel pulsante) ---------- */
 .whatsapp-flutuante {
   position: fixed;
   right: 16px;
@@ -1028,8 +1028,8 @@ a:hover { color: var(--coral-escura); }
   z-index: 130;
   display: grid;
   place-items: center;
-  width: 58px;
-  height: 58px;
+  width: 60px;
+  height: 60px;
   border-radius: 50%;
   background: var(--whatsapp);
   color: #fff;
@@ -1040,7 +1040,25 @@ a:hover { color: var(--coral-escura); }
 .whatsapp-flutuante:hover { background: var(--whatsapp-escuro); color: #fff; transform: translateY(-2px) scale(1.05); }
 /* Enquanto o aviso de cookies estiver visivel, o botao sobe para nao ficar por baixo */
 body:has(.banner-cookies.visivel) .whatsapp-flutuante { bottom: 108px; }
-.whatsapp-flutuante svg { height: 30px; width: auto; }
+.whatsapp-flutuante svg { height: 34px; width: auto; }
+
+/* Anel pulsante — o efeito clássico do widget do WhatsApp */
+.whatsapp-flutuante::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 3px solid var(--whatsapp);
+  animation: anel-whatsapp 2.2s ease-out infinite;
+  pointer-events: none;
+}
+@keyframes anel-whatsapp {
+  0% { transform: scale(1); opacity: 0.75; }
+  70%, 100% { transform: scale(1.65); opacity: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .whatsapp-flutuante::before { animation: none; opacity: 0; }
+}
 
 /* ---------- Banner de cookies (LGPD) ---------- */
 .banner-cookies {
