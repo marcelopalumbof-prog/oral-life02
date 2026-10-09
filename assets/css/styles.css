@@ -1030,20 +1030,22 @@ a:hover { color: var(--coral-escura); }
   right: 16px;
   bottom: 16px;
   z-index: 130;
-  display: block;
+  display: grid;
+  place-items: center;
   width: 60px;
   height: 60px;
+  border-radius: 50%;
+  background: var(--whatsapp);
+  box-shadow: 0 10px 26px rgba(7, 82, 71, 0.45);
   text-decoration: none;
   transition: transform 0.15s ease, bottom 0.25s ease;
 }
 .whatsapp-flutuante:hover { transform: translateY(-2px) scale(1.05); }
 /* Enquanto o aviso de cookies estiver visivel, o botao sobe para nao ficar por baixo */
 body:has(.banner-cookies.visivel) .whatsapp-flutuante { bottom: 108px; }
-.whatsapp-flutuante img {
-  display: block;
-  width: 60px;
-  height: 60px;
-  filter: drop-shadow(0 10px 26px rgba(7, 82, 71, 0.45));
+.whatsapp-flutuante svg {
+  height: 34px;
+  width: auto;
 }
 
 /* Anel pulsante — o efeito clássico do widget do WhatsApp */
