@@ -272,10 +272,7 @@ a:hover { color: var(--coral-escura); }
     color: var(--petroleo);
     background: var(--turquesa-clara);
   }
-  .header-cta { display: inline-flex; }
 }
-
-.header-cta { display: none; }
 
 /* ---------- Hero (foto grande no topo, texto abaixo — como na referência) ---------- */
 .hero {
@@ -1023,33 +1020,27 @@ a:hover { color: var(--coral-escura); }
 .redes svg { height: 20px; width: auto; }
 
 /* ---------- Botão flutuante WhatsApp ---------- */
+/* ---------- Botão flutuante WhatsApp (círculo, só a logo) ---------- */
 .whatsapp-flutuante {
   position: fixed;
   right: 16px;
   bottom: 16px;
   z-index: 130;
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
+  display: grid;
+  place-items: center;
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
   background: var(--whatsapp);
   color: #fff;
-  font-family: "Poppins", Arial, sans-serif;
-  font-weight: 600;
-  font-size: 0.95rem;
-  padding: 14px 18px;
-  border-radius: 999px;
   box-shadow: 0 10px 26px rgba(7, 82, 71, 0.45);
   text-decoration: none;
   transition: background 0.2s ease, transform 0.15s ease, bottom 0.25s ease;
 }
-.whatsapp-flutuante:hover { background: var(--whatsapp-escuro); color: #fff; transform: translateY(-2px); }
+.whatsapp-flutuante:hover { background: var(--whatsapp-escuro); color: #fff; transform: translateY(-2px) scale(1.05); }
 /* Enquanto o aviso de cookies estiver visivel, o botao sobe para nao ficar por baixo */
-body:has(.banner-cookies.visivel) .whatsapp-flutuante { bottom: 112px; }
-.whatsapp-flutuante svg { height: 24px; width: auto; flex: none; }
-.whatsapp-flutuante .rotulo { display: none; }
-@media (min-width: 640px) {
-  .whatsapp-flutuante .rotulo { display: inline; }
-}
+body:has(.banner-cookies.visivel) .whatsapp-flutuante { bottom: 108px; }
+.whatsapp-flutuante svg { height: 30px; width: auto; }
 
 /* ---------- Banner de cookies (LGPD) ---------- */
 .banner-cookies {
