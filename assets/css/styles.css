@@ -591,7 +591,7 @@ a:hover { color: var(--coral-escura); }
   grid-template-columns: repeat(2, 1fr);
 }
 @media (min-width: 720px) {
-  .galeria-grid { grid-template-columns: repeat(4, 1fr); gap: 20px; }
+  .galeria-grid { grid-template-columns: repeat(3, 1fr); gap: 20px; }
 }
 .galeria-grid img {
   width: 100%;
