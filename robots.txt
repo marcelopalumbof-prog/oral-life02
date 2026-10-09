@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# PENDÊNCIA: substitua pelo domínio definitivo da clínica.
+Sitemap: https://www.orallife.com.br/sitemap.xml
