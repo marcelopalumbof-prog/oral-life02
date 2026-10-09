@@ -51,10 +51,14 @@
   }
 
   /* ---------- Animação de entrada ao rolar ---------- */
+  /* Se o GSAP assumiu (animacoes.js), ele cuida dos reveals.
+     Caso contrário: IntersectionObserver como fallback (offline/reduced-motion). */
   var elementos = document.querySelectorAll(".revelar");
   if (elementos.length) {
     if (reduzirMovimento || !("IntersectionObserver" in window)) {
       elementos.forEach(function (el) { el.classList.add("visivel"); });
+    } else if (document.documentElement.classList.contains("gsap-ativo")) {
+      /* GSAP ativo — nada a fazer aqui */
     } else {
       var observador = new IntersectionObserver(
         function (entradas) {

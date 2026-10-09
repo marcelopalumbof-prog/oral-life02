@@ -81,6 +81,13 @@ a:hover { color: var(--coral-escura); }
   outline-offset: 3px;
   border-radius: 4px;
 }
+/* Foco visivel em superficies escuras (anel branco) */
+.site-footer :focus-visible,
+.cta-final :focus-visible,
+.hero-interno :focus-visible,
+.card-destaque :focus-visible {
+  outline-color: #ffffff;
+}
 
 .container {
   width: 100%;
@@ -1006,8 +1013,8 @@ a:hover { color: var(--coral-escura); }
 .redes a {
   display: grid;
   place-items: center;
-  width: 42px;
-  height: 42px;
+  width: 44px;
+  height: 44px;
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.1);
   transition: background 0.2s ease;
@@ -1148,6 +1155,8 @@ body:has(.banner-cookies.visivel) .whatsapp-flutuante { bottom: 112px; }
   transition: opacity 0.6s ease, transform 0.6s ease;
 }
 .revelar.visivel { opacity: 1; transform: none; }
+/* Quando o GSAP assume, ele controla os estados (CSS para de interferir) */
+html.gsap-ativo .revelar { opacity: 1; transform: none; transition: none; }
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }

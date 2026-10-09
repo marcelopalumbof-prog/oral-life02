@@ -87,6 +87,7 @@ Oral life 02/
 ```
 
 - **Formulário → WhatsApp:** o formulário da home valida nome, telefone e consentimento (LGPD) e abre o WhatsApp da clínica com a mensagem pronta. **Nenhum dado é armazenado no site** (não há backend).
+- **Animações (GSAP + ScrollTrigger):** camada `assets/js/animacoes.js` — entrada do hero, reveals em cascata, parallax sutil na foto e galeria com stagger. Carregada via CDN com **dupla proteção**: sem internet (CDN falha) o `main.js` assume com IntersectionObserver; com `prefers-reduced-motion` tudo aparece estático. Só anima `transform` e `opacity` (60fps).
 - **Rastreio de conversão:** todo clique em WhatsApp/telefone tem `data-conversao="…"`. O `main.js` dispara automaticamente eventos no `dataLayer` (`contato_clinica` + rótulo), que funcionam com **GA4 e Google Tag Manager** sem nenhuma alteração. Se `gtag` ou `fbq` existirem na página, também dispara neles.
 - **Cookies (LGPD):** banner com "Aceitar/Recusar"; a escolha fica no `localStorage`. Por padrão o site não carrega rastreadores externos.
 - **Acessibilidade:** skip link, foco visível, `aria-*` em menus/ícones/botões, contraste AA, navegação por teclado, formulário com labels e erros anunciados.
